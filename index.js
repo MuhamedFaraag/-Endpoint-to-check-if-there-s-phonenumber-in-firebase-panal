@@ -21,7 +21,7 @@ app.get('/checkPhoneNumber/:phoneNumber', async (req, res) => {
             res.json({ exists: false });
         } else {
             console.error('Error checking phone number:', error);
-            res.status(500).json({ error: 'Internal server error' });
+            res.status(500).json({ error: 'Internal server error', details: error.message });
         }
     }
 });
